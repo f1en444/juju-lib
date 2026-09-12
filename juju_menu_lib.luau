@@ -7761,3 +7761,6 @@ do
     __g.pixel_image_data  = pixel_image_data
     __g.shadow_image_data = shadow_image_data
 end
+
+end
+end
