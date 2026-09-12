@@ -7760,6 +7760,17 @@ do
     __g.show_transparency = show_transparency
     __g.pixel_image_data  = pixel_image_data
     __g.shadow_image_data = shadow_image_data
+
+    -- Extra services the feature ranges pull in inline. Ensure they exist as
+    -- globals even if the feature script's own `local X = game:GetService(...)`
+    -- line ended up outside the extracted range.
+    __g.lighting        = cloneref(game:GetService("Lighting"))
+    __g.run_service     = cloneref(game:GetService("RunService"))
+    __g.material_service= cloneref(game:GetService("MaterialService"))
+    __g.sound_service   = cloneref(game:GetService("SoundService"))
+    __g.starter_gui     = cloneref(game:GetService("StarterGui"))
+    __g.chat_service    = cloneref(game:GetService("Chat"))
+    __g.replicated_storage = cloneref(game:GetService("ReplicatedStorage"))
 end
 
 end
